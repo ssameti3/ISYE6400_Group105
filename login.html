@@ -61,21 +61,26 @@
         document.getElementById("login-form").addEventListener("submit", function(event) {
             event.preventDefault();
             
-            // Fetching user input
+            // Fetch user input
             let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
             let errorMessage = document.getElementById("error-message");
 
+            // Task Decomposition Implementation: Login Process
+            // 1. Read-only access on RegularUser table (simulated with local validation)
+            // 2. If email and password match, set session and redirect
+            // 3. If credentials are incorrect, show error message
+            
             // Sample user data (Replace with real database validation)
             let validUser = {
                 email: "user@example.com",
                 password: "password123"
             };
 
-            // Task Decomposition (Validating input and handling login)
+            // Abstract Code Logic Applied
             if (email === validUser.email && password === validUser.password) {
-                sessionStorage.setItem("UserID", email);  // Storing login session
-                window.location.href = "profile.html";    // Redirecting to Profile Page
+                sessionStorage.setItem("UserID", email);  // Store login session
+                window.location.href = "profile.html";    // Redirect to Profile Page
             } else {
                 errorMessage.textContent = "Invalid credentials, please try again!";
             }
